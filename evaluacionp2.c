@@ -17,7 +17,7 @@ int main()
 	// Creacion de la variable booleana flag para el menu
 	int flag = 1;
 	
-	// Uso de triple ciclo For para rellenar la matriz de alumnos matriculados con los datos generados por elcomando rand()
+	// Uso de triple ciclo For 
 		for (int i = 0; i < 3; i++)
 		{
 			for (int j = 0; j < 23; j++)
@@ -62,7 +62,7 @@ int Menu(int flag, int progresos[3][23])
 		{
 		case 1:
 			Menu = 0; // Se deja de visualizar el menu
-			// Se imprime las carreras
+			// Se imprime los estudiantes
 			printf("Las carreras son:\n 1. Ingenieria de Software. \n 2. Matematicas\n 3. Ingenieria Industrial\n 4. Contabilidad\n 5. Administracion\n 6. Relaciones Internacionales\n 7. Economia");
 			// Uso de un triple for para recorrer años, carrears y semestres
 			for (int i = 0; i < 3; i++)
@@ -79,9 +79,9 @@ int Menu(int flag, int progresos[3][23])
 			break;
 		case 2:
 			Menu = 0;              // Se deja de visualizar el menu
-			int max1;              // Variable a la que se le asignara el numero de los alumnos
-			int cantmax1[3] = {0}; // Creacion de un arreglo unidimensional para los años
-			// Triple ciclo For para crear una suma de todos los alumnos que fueron matriculados cada anio
+			int max1;              
+			int cantmax1[3] = {0}; // Creacion de un arreglo unidimensional para los progresos
+			// Doble ciclo For para recorrer el arreglo
 				for (int i = 0; i < 3; i++)
 				{
 					for (int j = 0; j < 23; j++)
@@ -97,12 +97,12 @@ int Menu(int flag, int progresos[3][23])
 					max1 = i;
 				}
 			}
-			printf("Respuesta: El anio en que ingreso la mayor cantidad de alumnos fue el %d con un total de %d alumnos\n\n", max1 + 1, cantmax1[max1]);
+			printf("Respuesta:  el promedio de calificaciones de cada alumno durante el semeste fue %d", );
 			break;
 		case 3:
 			Menu = 0;        // Se deja de visualizar el menu
-			int max2 = 0;        // Variable a la que se le asignara el numero de los alumnos
-			int cantmax2[23] = {0}; // Creacion de un arreglo unidimensional para las carreras
+			int max2 = 0;     
+			int cantmax2[23] = {0}; // Creacion de un arreglo unidimensional para los alumnos
 			
 			for (int i = 0; i < 7; i++)
 			{
@@ -112,7 +112,7 @@ int Menu(int flag, int progresos[3][23])
 				}
 			}
 			
-			// Encuentra la carrera con mas alumnos gracias a un ciclo for y un condicional if que ira ordenando los numeros
+			// Encuentra el alumno con mejor nota gracias a un ciclo for y un condicional if que ira ordenando las notas
 			for (int i = 0; i < 7; i++)
 			{
 				if (cantmax2[i] > cantmax2[max2])
@@ -121,23 +121,23 @@ int Menu(int flag, int progresos[3][23])
 				}
 			}
 			// Imprime la respuesta
-			printf("Respuesta: La Carrera que recibio la mayor cantidad de alumnos en el ultimo anio es %s con un total de %d alumnos\n\n", Carreras[max2], cantmax2[max2]);
+			printf("Respuesta: El alumno que obtuvo la mayor nota es %s con un total de %d alumnos\n\n", Carreras[max2], cantmax2[max2]);
 			break;
 		case 4:
 			Menu = 0;        // Se deja de visualizar el menu
 			int max3 = 0;        // Variable a la que se le asignara el numero de los alumnos
 			int cantmax3[5] = {0}; // Creacion de un arreglo unidimensional para los anios
 			
-			// Doble ciclo For que coloca al total de alumnos que fueron matriculados en la carrera de Ingenieria de Software en cada anio
+			// Doble ciclo For 
 			for (int i = 0; i < 5; i++)
 			{
 				for (int j = 0; j < 2; j++)
 				{
-					cantmax3[i] = cantmax3[i] + estudiantesmat[i][0][j];
+					cantmax3[i] = cantmax3[i] + progresos[i][j];
 				}
 			}
 			
-			// Uso de un ciclo For y un condicional If para poder encontrar el anio con mas cantidad de alumnos en la carrera de Ingenieria de Software en el segundo semestre
+			// Uso de un ciclo For y un condicional If para poder encontrar el alumno con mejor calificacion en todo el semestre
 			max3 = 0;
 			for (int i = 0; i < 5; i++)
 			{
@@ -148,7 +148,7 @@ int Menu(int flag, int progresos[3][23])
 			}
 			
 			// Imprime la respuesta
-			printf("Respuesta: El anio en que la carrera de Ingenieria de Software recibio la mayor cantidad de alumnos fue el %d con %d alumnos\n\n", max3 + 1, cantmax3[max3]);
+			printf("Respuesta: El alumno que obtuvo la mayor nota durante todo el semestre fue  %d con %d \n\n", max3 + 1, cantmax3[max3]);
 			break;
 		case 5:
 			Menu = 0; // Se deja de visualizar el menu
